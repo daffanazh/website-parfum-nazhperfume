@@ -65,7 +65,15 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 >>>>>>> f77ebac (Commit Pertama)
 =======
 - Buka git bash / terminal lalu clone repo ini : git clone https://github.com/daffaNazhmi/NazhParfume-E-Commerce.git
+<<<<<<< HEAD
 - Jalankan migration : php artisan migrate
 - Jalankan seeder : php artisan db:seed --class=UserSeeder
 - siap digunakan
 >>>>>>> 8402481 (README.md)
+=======
+- impor database db_nazhparfumelaravel.sql (ada di github ini)
+- Jalankan migration : php artisan migrate atau
+- Install folder vendor : composer install
+- Tambahkan di file .env : db_nazhparfumelaravel
+- Jalankan : php artisan serve
+>>>>>>> 209f94f (README.md)
