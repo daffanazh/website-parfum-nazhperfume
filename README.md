@@ -8,6 +8,7 @@ Here's my real project perfume website based on laravel 10. there's more fitur i
 
 Folder ini berisikan tentang website penjualan parfum menggunakan laravel 11. Didalamnya sudah terdapat fitur authentikasi dan sudah terintegrasi login dengan google, lalu ada fitur keranjang, detail parfum dan profil checkout dimana semua fitur yang sudah terkoneksi dengan database mysql. Desain NazhParfume-E-Commerce sangat sederhana sehingga penonton atau pelihat tidak kesulitan melihatnya. How to use :
 
+<<<<<<< HEAD
 - Buka git bash / terminal lalu clone repo ini. git clone 
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
@@ -62,3 +63,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 >>>>>>> f77ebac (Commit Pertama)
+=======
+- Buka git bash / terminal lalu clone repo ini : git clone https://github.com/daffaNazhmi/NazhParfume-E-Commerce.git
+- Jalankan migration : php artisan migrate
+- Jalankan seeder : php artisan db:seed --class=UserSeeder
+- siap digunakan
+>>>>>>> 8402481 (README.md)
