@@ -74,6 +74,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - impor database db_nazhparfumelaravel.sql (ada di github ini)
 - Jalankan migration : php artisan migrate
 - Install folder vendor : composer install
-- Tambahkan di file .env : db_nazhparfumelaravel
+- Tambahkan di file .env : DB_DATABASE=db_nazhparfumelaravel
 - Jalankan : php artisan serve
 >>>>>>> 209f94f (README.md)
