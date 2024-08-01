@@ -33,6 +33,7 @@
             Route::get('/get-kabupaten/{id}', 'App\Http\Controllers\ProfileController@getKabupatenByProvinsi');
             Route::get('/get-kecamatan/{id}', 'App\Http\Controllers\ProfileController@getKecamatanByKabupaten');
             Route::get('/checkout/{id}', [BarangController::class, 'checkout'])->name('checkout');
+            Route::get('/checkoutdetail/{id}', [BarangController::class, 'checkoutdetail'])->name('checkoutdetail');
         });
     
             Route::get('/sign-up', function(){

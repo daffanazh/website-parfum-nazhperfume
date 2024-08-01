@@ -115,9 +115,7 @@ class BarangController extends Controller
         // Mengambil data keranjang pengguna jika barang ini sudah ada di keranjang
         $cartItem = chart::where('user_id', $userId)
                          ->where('barang_id', $barang)
-                         ->first();
-        
-        $barang = Barang::all();         
+                         ->first();       
 
         return view ('components.tampilbarang',compact('show','cartItem','barang'));
     }
@@ -163,5 +161,21 @@ class BarangController extends Controller
                          ->first();
 
         return view ('components.checkout', compact('keranjang','cartItem'));
+    }
+
+    public function checkoutdetail($id)
+    {
+        // $keranjang = chart::findOrFail($id);
+
+        // $user = Auth::user();
+        // $userId = $user->id;
+    
+        // Mengambil data keranjang pengguna jika barang ini sudah ada di keranjang
+        // $cartItem = chart::where('user_id', $userId)
+        //                  ->where('barang_id', $id)
+        //                  ->first();
+
+        return view ('components.checkoutdetail', compact('keranjang'));  
+                       
     }
 }

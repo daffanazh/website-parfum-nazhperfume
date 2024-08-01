@@ -126,9 +126,9 @@
                     <div class="d-flex flex-column h-100 container-fluid mb-4">
                       <h5>Jumlah Barang :</h5>
                       <div class="d-flex mb-3 mt-3">
-                        <button class="border-secondary bg-white" data-harga="{{ $keranjang->barang->harga_barang }}">-</button>&nbsp;&nbsp;
+                        <button class="border-secondary bg-white">-</button>&nbsp;&nbsp;
                         <span>1</span>&nbsp;&nbsp;
-                        <button class="border-secondary bg-white" data-harga="{{ $keranjang->barang->harga_barang }}">+</button>
+                        <button class="border-secondary bg-white">+</button>
                       </div>
                       <div class="d-flex">
                         <h3 style="margin-top: 40px;" class="font-weight-bolder">{{ __('Total :') }}</h3>
