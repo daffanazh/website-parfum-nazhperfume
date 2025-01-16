@@ -1,13 +1,11 @@
-<<<<<<< HEAD
+
 # nazhperfume-ecommerce
-=======
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 ## Tentang NazhParfume-E-Commerce
 
 Folder ini berisikan tentang website penjualan parfum menggunakan laravel 11. Didalamnya sudah terdapat fitur authentikasi dan sudah terintegrasi login dengan google, lalu ada fitur keranjang, detail parfum dan profil checkout dimana semua fitur yang sudah terkoneksi dengan database mysql. Desain NazhParfume-E-Commerce sangat sederhana sehingga penonton atau pelihat tidak kesulitan melihatnya. How to use :
 
-<<<<<<< HEAD
 - Buka git bash / terminal lalu clone repo ini. git clone 
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
@@ -61,18 +59,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> f77ebac (Commit Pertama)
-=======
+
 - Buka git bash / terminal lalu clone repo ini : git clone https://github.com/daffaNazhmi/NazhParfume-E-Commerce.git
-<<<<<<< HEAD
 - Jalankan migration : php artisan migrate
 - Jalankan seeder : php artisan db:seed --class=UserSeeder
 - siap digunakan
->>>>>>> 8402481 (README.md)
-=======
 - impor database db_nazhparfumelaravel.sql (ada di github ini)
 - Jalankan migration : php artisan migrate
 - Install folder vendor : composer install
 - Tambahkan di file .env : DB_DATABASE=db_nazhparfumelaravel
 - Jalankan : php artisan serve
->>>>>>> 209f94f (README.md)
