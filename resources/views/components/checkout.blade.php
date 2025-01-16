@@ -1,5 +1,75 @@
 
+
+      
+
+
 <x-template.main>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          // Fungsi untuk format angka menjadi format rupiah
+          function formatRupiah(angka) {
+              return new Intl.NumberFormat('id-ID', {
+                  style: 'currency',
+                  currency: 'IDR',
+              }).format(angka).replace('IDR', '');
+          }
+
+          // Fungsi untuk mengupdate jumlah dan harga
+          function updateTotal(id, hargaBarang, jumlah) {
+              var totalHarga = hargaBarang * jumlah;
+
+              // Mengupdate elemen jumlah barang
+              document.getElementById('count-' + id).textContent = jumlah;
+
+              // Mengupdate elemen total harga dengan format rupiah
+              document.getElementById('harga-' + id).textContent = formatRupiah(totalHarga);
+          }
+
+          // Fungsi untuk menambah jumlah barang
+          function increment(event) {
+              var id = event.target.id.split('-')[1];
+              var hargaBarang = parseInt(event.target.getAttribute('data-harga'));
+              var jumlahElement = document.getElementById('count-' + id);
+              var jumlah = parseInt(jumlahElement.textContent);
+
+              // Menambah jumlah barang
+              jumlah += 1;
+
+              // Memperbarui total
+              updateTotal(id, hargaBarang, jumlah);
+          }
+
+          // Fungsi untuk mengurangi jumlah barang
+          function decrement(event) {
+              var id = event.target.id.split('-')[1];
+              var hargaBarang = parseInt(event.target.getAttribute('data-harga'));
+              var jumlahElement = document.getElementById('count-' + id);
+              var jumlah = parseInt(jumlahElement.textContent);
+
+              // Mengurangi jumlah barang jika lebih dari 1
+              if (jumlah > 1) {
+                  jumlah -= 1;
+              }
+
+              // Memperbarui total
+              updateTotal(id, hargaBarang, jumlah);
+          }
+
+          // Menambahkan event listener pada tombol
+          document.querySelectorAll('button[id^="kurangButton-"]').forEach(button => {
+              button.addEventListener('click', decrement);
+          });
+
+          document.querySelectorAll('button[id^="tambahButton-"]').forEach(button => {
+              button.addEventListener('click', increment);
+          });
+      });
+    </script>
+
+
+
     <div class="row my-4 container-fluid">
         <h3 class="font-weight-bolder mb-4">Detail Pesanan</h3>
         <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
@@ -26,7 +96,7 @@
                   @if(!isset($keranjang->user->nomor_telepon) || $keranjang->user->nomor_telepon === null)
                       <p class="text-danger" style="margin-left: 5px;">Data masih kosong!</p>
                   @else
-                      <p class="text-dark" style="margin-left: 5px;">{{ $keranjang->user->nomor_telepon }}</p>
+                      <p class="text-dark" style="margin-left: 5px;" >{{ $keranjang->user->nomor_telepon }}</p>
                   @endif
                 </div>
 
@@ -108,7 +178,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="card h-100">
             <div class="card-header pb-0">
-              <h3 class="font-weight-bolder" style="margin-left:18px;">Pesanan</h3>
+              <h3 class="font-weight-bolder" style="margin-left:18px;">{{ __('Pesanan') }}</h3>
             </div>
             <div class="card-body p-3 mt-4">
                 <div class="col-lg-12 col-sm-12">
@@ -122,23 +192,29 @@
                   </div>
                 </div>
                 <hr>
+
+
+
                 <div class="col-lg-12 col-sm-12">
-                    <div class="d-flex flex-column h-100 container-fluid mb-4">
+                  <div class="d-flex flex-column h-100 container-fluid mb-4">
                       <h5>Jumlah Barang :</h5>
                       <div class="d-flex mb-3 mt-3">
-                        <button class="border-secondary bg-white" data-harga="{{ $keranjang->barang->harga_barang }}">-</button>&nbsp;&nbsp;
-                        <span>1</span>&nbsp;&nbsp;
-                        <button class="border-secondary bg-white" data-harga="{{ $keranjang->barang->harga_barang }}">+</button>
+                          <button id="kurangButton-{{ $keranjang->id }}" class="border-secondary bg-white" data-harga="{{ $keranjang->barang->harga_barang }}">-</button>&nbsp;&nbsp;
+                          <span id="count-{{ $keranjang->id }}">1</span>&nbsp;&nbsp;
+                          <button id="tambahButton-{{ $keranjang->id }}" class="border-secondary bg-white" data-harga="{{ $keranjang->barang->harga_barang }}">+</button>
                       </div>
                       <div class="d-flex">
-                        <h3 style="margin-top: 40px;" class="font-weight-bolder">{{ __('Total :') }}</h3>
+                          <h3 style="margin-top: 40px;" class="font-weight-bolder">{{ __('Total :') }}</h3>
                       </div>
                       <div class="d-flex">
-                        <h3 class="text-success font-weight-bolder">Rp.</h3>
-                        <h3 id="harga-{{ $keranjang->barang->id }}" class="text-success font-weight-bolder">{{ number_format($keranjang->barang->harga_barang * ($cartItem ? $cartItem->jumlah : 1), 0, ',', '.') }}</h3>
+                          <h3 class="text-success font-weight-bolder">Rp.</h3>
+                          <h3 id="harga-{{ $keranjang->id }}" class="text-success font-weight-bolder">{{ number_format($keranjang->barang->harga_barang, 0, ',', '.') }}</h3>
                       </div>
-                    </div>
+                  </div>
                 </div>
+
+                
+
                 <hr>
                 <div class="col-lg-12 col-sm-12">
                   <div class="d-flex flex-column h-100 container-fluid mb-4">

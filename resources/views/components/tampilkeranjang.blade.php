@@ -13,7 +13,7 @@
 
       @endphp
 
-      <script>
+      {{-- <script>
 
         document.addEventListener('DOMContentLoaded', function() {
             // Fungsi untuk menangani klik pada tombol
@@ -66,7 +66,7 @@
             @endforeach
         });
         
-      </script>
+      </script> --}}
 
 
 <x-template.main>
@@ -82,22 +82,22 @@
       <div class="card mt-3">
         <div class="card-body p-3">
           <div class="row">
-            <div class="col-lg-2 mt-3 col-sm-2">
+            <div class="col-lg-3 mt-3 col-sm-3">
               <div class="d-flex flex-column h-100 container-fluid mb-4">
                 <img class="border-radius-lg" src="{{asset('upload/'.$item->barang->photos)}}" width="70%" alt="">
               </div>
             </div>
-            <div class="col-lg-2 col-sm-2">
+            <div class="col-lg-3 col-sm-3">
               <div class="d-flex flex-column mt-4 h-100 container-fluid">
                 <p class="text-dark pt-3" style="font-size:20px;">{{ $item->barang->nama_barang }} | Penyedia : {{ $item->barang->penyedia_barang }}</p>
               </div>
             </div>
-            <div class="col-lg-2 col-sm-2" style="">
+            <div class="col-lg-3 col-sm-3" style="">
               <div class="d-flex container-fluid">
                 <p id="hargaAwal-{{ $item->id }}" class="text-dark font-weight-bolder pt-5" style="font-size:20px;">Rp.{{ number_format($item->barang->harga_barang, 0, ',', '.') }}</p>
               </div>
             </div>
-            <div class="col-lg-2 col-sm-2">
+            {{-- <div class="col-lg-2 col-sm-2">
               <div class="d-flex mb-3 mt-5 container-fluid">
                 <button id="kurangButton-{{ $item->id }}" class="border-secondary bg-white" onclick="decrement()" data-harga="{{ $item->barang->harga_barang }}">-</button>&nbsp;&nbsp;
                   <span id="count-{{ $item->id }}">1</span>
@@ -112,8 +112,8 @@
               <div class="d-flex container-fluid mb-4">
                 <p class="text-success font-weight-bolder" style="font-size:20px;">Rp.</p><p id="harga-{{ $item->id }}" class="text-success font-weight-bolder" style="font-size:20px;">{{ number_format($item->barang->harga_barang, 0, ',', '.') }}</p>
               </div>
-            </div>
-          <div class="col-lg-2 col-sm-2">
+            </div> --}}
+          <div class="col-lg-3 col-sm-3">
                 <div class="d-flex flex-column h-100 container-fluid mb-4">
                     <a href="{{ route('hapus',$item->id) }}"><button class="btn bg-gradient-danger mt-5">Hapus</button></a>
                     <a href="{{ route('checkout',$item->id) }}"><button class="btn bg-gradient-info">Checkout</button></a>  

@@ -154,13 +154,15 @@ class BarangController extends Controller
 
         $user = Auth::user();
         $userId = $user->id;
+
+        // $cart = chart::where('user_id', $userid)->get();
     
         // Mengambil data keranjang pengguna jika barang ini sudah ada di keranjang
-        $cartItem = chart::where('user_id', $userId)
-                         ->where('barang_id', $id)
-                         ->first();
+        // $cart = chart::where('user_id', $userId)
+        //                  ->where('barang_id', $id)
+        //                  ->first();
 
-        return view ('components.checkout', compact('keranjang','cartItem'));
+        return view ('components.checkout', compact('keranjang'));
     }
 
     public function checkoutdetail($id)

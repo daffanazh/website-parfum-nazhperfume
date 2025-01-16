@@ -76,7 +76,6 @@
                 <div class="card-body p-3" style="margin-top: -15px;">
                   <h3>Rp.{{ number_format($show->harga_barang, 0, ',', '.') }}</h3>
                 </div>
-
                 <div class="card-body p-3">
                   <div class="row">
                     <div class="col-lg-6 col-sm-6">
